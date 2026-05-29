@@ -1,13 +1,17 @@
-import "./components/sections/Hero.css";
-import Hero from "./components/sections/Hero";
+import { useTheme } from "./hooks/useTheme.jsx";
+
+function Test() {
+  const { isDark, toggle } = useTheme();
+  return (
+    <div style={{ color: "white", padding: "2rem" }}>
+      <h1>Theme: {isDark ? "dark" : "light"}</h1>
+      <button onClick={toggle} style={{ color: "white", border: "1px solid white", padding: "8px 16px", cursor: "pointer" }}>
+        Toggle
+      </button>
+    </div>
+  );
+}
 
 export default function App() {
-  return (
-    <main>
-      <Hero />
-      <section id="about"    style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", color: "#556070", fontFamily: "monospace" }}>// About — coming next</section>
-      <section id="projects" style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", color: "#556070", fontFamily: "monospace" }}>// Projects — coming next</section>
-      <section id="contact"  style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", color: "#556070", fontFamily: "monospace" }}>// Contact — coming next</section>
-    </main>
-  );
+  return <Test />;
 }
