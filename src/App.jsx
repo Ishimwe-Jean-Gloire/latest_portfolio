@@ -1,17 +1,25 @@
-import { useTheme } from "./hooks/useTheme.jsx";
-
-function Test() {
-  const { isDark, toggle } = useTheme();
-  return (
-    <div style={{ color: "white", padding: "2rem" }}>
-      <h1>Theme: {isDark ? "dark" : "light"}</h1>
-      <button onClick={toggle} style={{ color: "white", border: "1px solid white", padding: "8px 16px", cursor: "pointer" }}>
-        Toggle
-      </button>
-    </div>
-  );
-}
+import "./components/layout/Navbar.css";
+import "./components/layout/Footer.css";
+import "./components/sections/Hero.css";
+import "./components/sections/About.css";
+import "./components/sections/Projects.css";
+import "./components/sections/Contact.css";
+import Navbar from "./components/layout/Navbar";
+import Hero from "./components/sections/Hero";
+import About from "./components/sections/About";
+import Projects from "./components/sections/Projects";
+import Contact from "./components/sections/Contact";
+import Footer from "./components/layout/Footer";
 
 export default function App() {
-  return <Test />;
+  return (
+    <main>
+      <Navbar />
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
+      <Footer />
+    </main>
+  );
 }
